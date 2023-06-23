@@ -9,20 +9,22 @@ connectDb()
 
 // app.use(log)
 app.use(express.json())
-app.use(cors())
-//     {
-//     credentials: true,
-//     origin:(o,cb) => {
-//         const allowed = [
-//             "http://localhost:3000/",
-//         ]
-//         if(allowed.indexOf(o) !== -1 || !o){
-//             cb(null, true)
-//         } else {
-//             cb("blocked by cors")
-//         }
-//     }
-// }))
+app.use(cors(
+     {
+     credentials: true,
+     origin:(o,cb) => {
+         const allowed = [
+            //  "http://localhost:3000"
+   "https://wild-jade-armadillo-slip.cyclic.app/api/",
+         ]
+         if(allowed.indexOf(o) !== -1 || !o){
+             cb(null, true)
+         } else {
+             cb("blocked by cors")
+         }
+     }
+ }))
+
 app.use("/api/", require("./routes/routesContact"))
 
 
