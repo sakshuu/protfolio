@@ -29,10 +29,10 @@ app.use("/api/contact", require("./routes/routesContact"))
 
 
 app.use("*", (req,res) => {
-//     res.sendFile(path.join(__dirname,"build/index.html"))
-res.status(404).json({
-    message: "404 :Resource You Are Looking For Is Not Available"
-})
+    res.sendFile(path.join(__dirname,"build/index.html"))
+// res.status(404).json({
+//     message: "404 :Resource You Are Looking For Is Not Available"
+// })
 })
 
 
