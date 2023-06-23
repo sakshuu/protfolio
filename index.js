@@ -25,7 +25,7 @@ app.use(cors(
      }
  }))
 
-app.use("/api/", require("./routes/routesContact"))
+app.use("/api/contact", require("./routes/routesContact"))
 
 
 app.use("*", (req,res) => {
